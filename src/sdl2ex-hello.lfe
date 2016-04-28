@@ -2,19 +2,37 @@
   (export (run 0)))
 
 (defun run ()
+  (logjam:start)
   (spawn_opt #'init/0 '(#(scheduler 0))))
 
 (defun init ()
-  (logjam:start)
   (logjam:debug "Start: ~p" `(,(sdl:start)))
   (logjam:debug "Stop on exit: ~p" `(,(sdl:stop_on_exit)))
-  (let* ((`#(ok ,window) (sdl_window:create "Hello, SDL!" 10 10 500 500 '()))
-         (`#(ok ,renderer) (sdl_renderer:create window
-                             -1 '(accelerated present_vsync)))
-         ('ok (sdl_renderer:set_draw_color renderer 255 255 255 255))
-         (`#(ok ,texture) (sdl_texture:create_from_file
-                            renderer "priv/images/lfe.png")))
-    (loop (map 'window window 'renderer renderer 'texture texture))))
+  (let* ((window (get-window "Hello, SDL!" 10 10 500 500))
+         (renderer (get-renderer window))
+         (texture (get-texture renderer "priv/images/lfe.png")))
+    (logjam:debug "Set draw color: ~p"
+                  `(,(sdl_renderer:set_draw_color renderer 255 255 255 255)))
+    (loop (map 'window window
+               'renderer renderer
+               'texture texture))))
+
+(defun get-window (title x y w h)
+  (case (sdl_window:create title x y w h '())
+    (`#(ok ,window) window)
+    (err (logjam:error "~p" `(,err)))))
+
+(defun get-renderer (window)
+  (let ((index -1)
+        (flags '(accelerated present_vsync)))
+    (case (sdl_renderer:create window index flags)
+      (`#(ok ,renderer) renderer)
+      (err (logjam:error "~p" `(,err))))))
+
+(defun get-texture (renderer image-file)
+  (case (sdl_texture:create_from_file renderer image-file)
+    (`#(ok ,texture) texture)
+    (err (logjam:error "~p" `(,err)))))
 
 (defun loop (state)
   (events-loop)
@@ -34,5 +52,5 @@
     (sdl_renderer:present renderer)))
 
 (defun terminate ()
-  (init:stop)
+  (logjam:debug "Stopping ... ~p" `(,(init:stop)))
   (exit 'normal))
