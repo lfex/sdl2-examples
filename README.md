@@ -7,6 +7,7 @@
 
 *SDL2 Examples in LFE*
 
+
 ##### Contents
 
 * [Introduction](#introduction-)
@@ -18,7 +19,15 @@
 
 ## Introduction [&#x219F;](#contents)
 
-TBD
+Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games.
+
+The Erlang/LFE/Elixir ecosystem have access to SDL via the following Erlang libraries:
+
+* [esdl](https://github.com/dgud/esdl)
+* [esdl2](https://github.com/ninenines/esdl2)
+
+The example in this repo take advantage of the newer SDL2 library and the Erlang bindings
+for it that Loïc has made available with esdl2.
 
 
 ## Dependencies [&#x219F;](#contents)
@@ -44,7 +53,17 @@ In your ``rebar.config`` file, update your ``deps`` section to include
 
 ## Usage [&#x219F;](#contents)
 
-TBD
+Start up the LFE repl:
+
+```bash
+$ make repl
+```
+
+Then run the example:
+
+```lisp
+> (sdl2ex-hello:run)
+```
 
 
 ## License [&#x219F;](#contents)
