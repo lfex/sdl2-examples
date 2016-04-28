@@ -8,7 +8,7 @@
   1},
  {<<"esdl2">>,
   {git,"https://github.com/erlsci/esdl2.git",
-       {ref,"2745b60d152a320bf2f6093473122223873de204"}},
+       {ref,"119618074811f70de9d774c5f164d7659dbfee17"}},
   0},
  {<<"goldrush">>,
   {git,"git://github.com/DeadZen/goldrush.git",
