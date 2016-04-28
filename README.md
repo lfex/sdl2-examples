@@ -2,9 +2,6 @@
 
 [![][sdl-logo]][sdl-logo-large]
 
-[sdl-logo]: priv/images/sdl-logo-x250.png
-[sdl-logo-large]: priv/images/sdl-logo-x1480.png
-
 *SDL2 Examples in LFE*
 
 
@@ -65,6 +62,12 @@ Then run the example:
 > (sdl2ex-hello:run)
 ```
 
+This will open up a window like you see here:
+
+[![Hello SDL screenshot][sdl-hello-screen-thumb]][sdl-hello-screen]
+
+When you're done admiring the logo, closing the window will cause the LFE application to shutdown.
+
 
 ## License [&#x219F;](#contents)
 
@@ -81,3 +84,10 @@ Copyright © 2016 Duncan McGreggor
 Distributed under the Apache License, Version 2.0.
 ```
 
+<!-- Named page links below: /-->
+
+[sdl-logo]: priv/images/sdl-logo-x250.png
+[sdl-logo-large]: priv/images/sdl-logo-x1480.png
+
+[sdl-hello-screen-thumb]: priv/images/screenshot-hello-sdl-thumb.png
+[sdl-hello-screen]: priv/images/screenshot-hello-sdl.png
