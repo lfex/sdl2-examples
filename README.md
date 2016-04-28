@@ -11,6 +11,7 @@
 * [Dependencies](#dependencies-)
 * [Installation](#installation-)
 * [Usage](#usage-)
+  * [Example 1](#example-1-)
 * [License](#license-)
 
 
@@ -49,6 +50,8 @@ In your ``rebar.config`` file, update your ``deps`` section to include
 
 
 ## Usage [&#x219F;](#contents)
+
+### Example 1 [&#x219F;](#contents)
 
 Start up the LFE repl:
 
