@@ -7,7 +7,7 @@
 (defun init ()
   (logjam:start)
   (logjam:debug "Start: ~p" `(,(sdl:start)))
-  (logjam:debug "Start: ~p" `(,(sdl:stop_on_exit)))
+  (logjam:debug "Stop on exit: ~p" `(,(sdl:stop_on_exit)))
   (let* ((`#(ok ,window) (sdl_window:create "Hello, SDL!" 10 10 500 500 '()))
          (`#(ok ,renderer) (sdl_renderer:create window
                              -1 '(accelerated present_vsync)))
