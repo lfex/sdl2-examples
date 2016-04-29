@@ -36,6 +36,8 @@ The following are required to be installed on your system:
 * rebar3
 * SDL2
 
+If installing on a Mac with Homebrew, you will need ``sdl2`` and ``sdl2_image``. The list of packages developed against for Ubuntu are listed in this project's ``.travis.yml`` config file.
+
 
 ## Installation [&#x219F;](#contents)
 
