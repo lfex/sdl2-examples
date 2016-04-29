@@ -209,9 +209,9 @@
                         wait 0
                         vars #m())))
 
-(defun new-bullet
-  (((= `#m(x ,x y ,y w ,w h ,h) parent) actions)
-    (maps:merge parent ))
+; (defun new-bullet
+;   (((= `#m(x ,x y ,y w ,w h ,h) parent) actions)
+;     (maps:merge parent ))
 
 (defun update-bullet
   ((bullet '() acc)
